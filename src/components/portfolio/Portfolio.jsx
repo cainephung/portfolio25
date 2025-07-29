@@ -5,38 +5,18 @@ import { motion, useInView, useScroll, useTransform } from "motion/react";
 const items = [
   {
     id: 1,
-    img: "/p1.jpg",
-    title: "Full Stack Blog Application",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
+    video: "/output.mp4",
+    title: "ASL Sign Language Recognition App",
+    desc: "Built a webcam-based app using Python, MediaPipe, PyTorch, and OpenCV to recognize ASL hand signs (A–Z) and simple motion-based gestures.\n\nUsed MediaPipe for hand tracking, trained an LSTM model for gesture sequences,\nand optimized preprocessing for real-time responsiveness.",
   },
+
   {
     id: 2,
-    img: "/p2.jpg",
-    title: "School Management System",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  {
-    id: 3,
-    img: "/p3.jpg",
-    title: "Real-time Chat Application",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  {
-    id: 4,
-    img: "/p4.jpg",
-    title: "Social Media Project",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
-  },
-  {
-    id: 5,
-    img: "/p5.jpg",
-    title: "Animated Portfolio Website",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure laboriosam tempore consectetur, atque maiores culpa quia, repellat id, dicta esse fugit neque voluptatem provident itaque voluptates minima. Repudiandae, provident hic.",
-    link: "/",
+    img: "/shop.png",
+    title: "E-Commerce Website",
+    desc: "Built with Next.js, JavaScript, and Sanity.io, this responsive e-commerce site features product listings, cart, and checkout flow.\n\n It includes Sanity CMS for content management, smooth UI animations, and a mobile-friendly layout with visual polish.",
+    link: "https://caineshop.vercel.app",
+    showButton: true,
   },
 ];
 
@@ -87,7 +67,18 @@ const ListItem = ({ item }) => {
         animate={isInView ? "animate" : "initial"}
         className="pImg"
       >
-        <img src={item.img} alt="" />
+        {item.video ? (
+          <video
+            src={item.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            // className="project-video"
+          />
+        ) : (
+          <img src={item.img} alt="" />
+        )}
       </motion.div>
       <motion.div
         variants={textVariants}
@@ -95,10 +86,24 @@ const ListItem = ({ item }) => {
         className="pText"
       >
         <motion.h1 variants={textVariants}>{item.title}</motion.h1>
-        <motion.p variants={textVariants}>{item.desc}</motion.p>
-        <motion.a variants={textVariants} href={item.link}>
-          <button>View Project</button>
-        </motion.a>
+        <motion.h3 variants={textVariants}>
+          {item.desc.split("\n").map((line, idx) => (
+            <span key={idx}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </motion.h3>
+        {item.showButton && (
+          <motion.a
+            variants={textVariants}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button>Live Site</button>
+          </motion.a>
+        )}
       </motion.div>
     </div>
   );
@@ -140,9 +145,19 @@ const Portfolio = () => {
     [0, 1],
     [0, -window.innerWidth * items.length]
   );
+  const inViewRef = useRef();
+  const isPortfolioInView = useInView(inViewRef, {
+    margin: "-50% 0px -50% 0px",
+  });
 
   return (
-    <div className="portfolio" ref={ref}>
+    <div
+      className="portfolio"
+      ref={(el) => {
+        ref.current = el;
+        inViewRef.current = el;
+      }}
+    >
       <motion.div className="pList" style={{ x: xTranslate }}>
         <div
           className="empty"
@@ -157,31 +172,31 @@ const Portfolio = () => {
       </motion.div>
       <section />
       <section />
-      <section />
-      <section />
-      <section />
-      <div className="pProgress">
-        <svg width="100%" height="100%" viewBox="0 0 160 160">
-          <circle
-            cx="80"
-            cy="80"
-            r="70"
-            fill="none"
-            stroke="#ddd"
-            strokeWidth={20}
-          />
-          <motion.circle
-            cx="80"
-            cy="80"
-            r="70"
-            fill="none"
-            stroke="#dd4c62"
-            strokeWidth={20}
-            style={{ pathLength: scrollYProgress }}
-            transform="rotate(-90 80 80)"
-          />
-        </svg>
-      </div>
+
+      {isPortfolioInView && (
+        <div className="pProgress">
+          <svg width="100%" height="100%" viewBox="0 0 160 160">
+            <circle
+              cx="80"
+              cy="80"
+              r="70"
+              fill="none"
+              stroke="#ddd"
+              strokeWidth={20}
+            />
+            <motion.circle
+              cx="80"
+              cy="80"
+              r="70"
+              fill="none"
+              stroke="#034694"
+              strokeWidth={20}
+              style={{ pathLength: scrollYProgress }}
+              transform="rotate(-90 80 80)"
+            />
+          </svg>
+        </div>
+      )}
     </div>
   );
 };

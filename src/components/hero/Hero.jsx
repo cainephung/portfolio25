@@ -110,7 +110,7 @@ const Hero = () => {
         >
           <motion.a
             variants={followVariants}
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/caine-phung/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -120,7 +120,7 @@ const Hero = () => {
           </motion.a>
           <motion.a
             variants={followVariants}
-            href="https://github.com/yourusername"
+            href="https://github.com/cainephung"
             target="_blank"
             rel="noopener noreferrer"
           >

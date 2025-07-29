@@ -118,22 +118,22 @@
 .bubbleContainer {
   width: 50%;
   display: flex;
+  justify-content: flex-start; /* push bubble to the left */
   align-items: end;
   gap: 8px;
-  justify-content: space-between;
 }
 
 .bubble {
-  width: 100%;
-  height: 60px;
-  align-items: center; /* vertical centering */
-  justify-content: center; /* optional: horizontal centering */
+  width: fit-content; /* shrink to fit text */
+  display: flex; /* needed for align-items to work */
+  align-items: center;
+  justify-content: flex-start; /* align text to the left */
   background-color: white;
   color: black;
   font-weight: bold;
   padding: 24px;
   font-size: 18px;
-  border-radius: 20px 20px 0px 20px;
+  border-radius: 20px 20px 20px 0px;
 }
 
 .bubbleContainer img {

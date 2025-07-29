@@ -44,16 +44,18 @@ textarea {
 }
 
 label {
-  font-size: 13px;
+  font-size: 20px;
 }
 
 .formButton {
-  background-color: #dd4c62;
+  background-color: #034694;
   color: white;
   padding: 20px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
+  font-size: medium;
 }
 
 @media (max-width: 1280px) {
