@@ -1,67 +1,44 @@
 import ComputerModelContainer from "./computer/ComputerModelContainer";
-import ConsoleModelContainer from "./console/ConsoleModelContainer";
-import Counter from "./Counter";
-import MugModelContainer from "./mug/MugModelContainer";
 import "./services.css";
 import { motion, useInView } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import { FaUserGraduate, FaBriefcase, FaMapMarkerAlt } from "react-icons/fa";
 
 const textVariants = {
-  initial: {
-    x: -100,
-    y: -100,
-    opacity: 0,
-  },
+  initial: { x: -100, y: -100, opacity: 0 },
   animate: {
     x: 0,
     y: 0,
     opacity: 1,
-    transition: {
-      duration: 1,
-    },
+    transition: { duration: 1 },
   },
 };
 
-const listVariants = {
-  initial: {
-    x: -100,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      staggerChildren: 0.5,
-    },
-  },
-};
-
-const services = [
+const aboutFacts = [
   {
     id: 1,
-    img: "/service1.png",
-    title: "Web Development",
-    counter: 35,
+    icon: <FaUserGraduate className="text-white text-4xl" />,
+    title: "Software Developer",
+    note: "New Grad, 2025",
   },
   {
     id: 2,
-    img: "/service2.png",
-    title: "Product Design",
-    counter: 23,
+    icon: <FaBriefcase className="text-white text-4xl" />,
+    title: "Co-op Experience",
+    note: "4 terms, 16 months",
   },
   {
     id: 3,
-    img: "/service3.png",
-    title: "Branding",
-    counter: 46,
+    icon: <FaMapMarkerAlt className="text-white text-4xl" />,
+    title: "Based in Guelph",
+    note: "Open to remote / hybrid",
   },
 ];
 
-const Services = () => {
-  const [currentServiceId, setCurrentServiceId] = useState(1);
+const About = () => {
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-200px" });
+
   return (
     <div className="services" ref={ref}>
       <div className="sSection left">
@@ -70,46 +47,39 @@ const Services = () => {
           animate={isInView ? "animate" : "initial"}
           className="sTitle"
         >
-          How do I help?
+          About Me
         </motion.h1>
+
         <motion.div
-          variants={listVariants}
+          variants={textVariants}
           animate={isInView ? "animate" : "initial"}
           className="serviceList"
         >
-          {services.map((service) => (
+          {aboutFacts.map((item) => (
             <motion.div
-              variants={listVariants}
-              className="service"
-              key={service.id}
-              onClick={() => setCurrentServiceId(service.id)}
+              key={item.id}
+              whileHover={{ scale: 1.05, y: -4 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="service p-6"
             >
-              <div className="serviceIcon">
-                <img src={service.img} alt="" />
+              <div className="serviceIcon w-16 h-16 flex items-center justify-center rounded-full bg-[#444]">
+                {item.icon}
               </div>
-              <div className="serviceInfo">
-                <h2>{service.title}</h2>
-                <h3>{service.counter} Projects</h3>
+
+              <div className="serviceInfo text-lg mt-4">
+                <h1 className="text-white font-semibold">{item.title}</h1>
+                <h2 className="text-neutral-300">{item.note}</h2>
               </div>
             </motion.div>
           ))}
         </motion.div>
-        <div className="counterList">
-          <Counter from={0} to={104} text="Projects Completed" />
-          <Counter from={0} to={72} text="Happy Clients" />
-        </div>
       </div>
+
       <div className="sSection right">
-        {currentServiceId === 1 ? (
-          <ComputerModelContainer />
-        ) : currentServiceId === 2 ? (
-          <MugModelContainer />
-        ) : (
-          <ConsoleModelContainer />
-        )}
+        <ComputerModelContainer />
       </div>
     </div>
   );
 };
 
-export default Services;
+export default About;

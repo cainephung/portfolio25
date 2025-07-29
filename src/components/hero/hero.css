@@ -34,13 +34,15 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  gap: 320px;
 }
 
 .hTitle {
   margin-top: 50px;
   font-size: 100px;
-  color: "pink";
+  color: #034694;
 }
 
 .hTitle span {
@@ -81,16 +83,17 @@
 
 .follow {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row; /* was column */
+  align-items: center;
+  gap: 16px;
   padding: 16px;
   background-color: #2f204e;
   border-bottom-right-radius: 10px;
 }
 
 .follow img {
-  width: 20px;
-  height: 20px;
+  width: 100px;
+  height: 100px;
 }
 
 .followTextContainer {
@@ -126,7 +129,8 @@
   align-items: center; /* vertical centering */
   justify-content: center; /* optional: horizontal centering */
   background-color: white;
-  color: #555;
+  color: black;
+  font-weight: bold;
   padding: 24px;
   font-size: 18px;
   border-radius: 20px 20px 0px 20px;
