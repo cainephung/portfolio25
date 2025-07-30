@@ -21,6 +21,8 @@
   margin: auto;
   height: 80%;
   width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hImg img {
