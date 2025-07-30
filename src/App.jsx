@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import NavBar from "./components/navbar/NavBar";
+// import "./App.css";
 
 const Hero = lazy(() => import("./components/hero/Hero"));
 const Services = lazy(() => import("./components/services/Services"));
@@ -17,7 +18,7 @@ const App = () => {
       <NavBar />
       <main className="pageContent">
         <Suspense fallback={"loading..."}>
-          <section id="home">
+          <section id="home" style={{ paddingTop: "80px", marginTop: "-80px" }}>
             <Hero />
           </section>
           <section id="services">

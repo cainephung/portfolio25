@@ -4,9 +4,6 @@
   padding: 2rem;
   text-align: center;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 .logo {
   height: 6em;
