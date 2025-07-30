@@ -1,11 +1,11 @@
 import { lazy, Suspense, useEffect } from "react";
-import LazyLoad from "react-lazyload";
+import NavBar from "./components/navbar/NavBar";
 
 const Hero = lazy(() => import("./components/hero/Hero"));
 const Services = lazy(() => import("./components/services/Services"));
+const Experience = lazy(() => import("./components/experience/Experience"));
 const Portfolio = lazy(() => import("./components/portfolio/Portfolio"));
 const Contact = lazy(() => import("./components/contact/Contact"));
-const Experience = lazy(() => import("./components/experience/Experience"));
 
 const App = () => {
   useEffect(() => {
@@ -13,45 +13,28 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container">
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#home">
+    <>
+      <NavBar />
+      <main className="pageContent">
+        <Suspense fallback={"loading..."}>
+          <section id="home">
             <Hero />
           </section>
-        </LazyLoad>
-      </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#services">
+          <section id="services">
             <Services />
-          </section>{" "}
-        </LazyLoad>
-      </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#experience">
+          </section>
+          <section id="experience">
             <Experience />
           </section>
-        </LazyLoad>
-      </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          {/* <section id="#portfolio"> */}
           <section id="portfolio">
             <Portfolio />
-          </section>{" "}
-          {/* </section> */}{" "}
-        </LazyLoad>
-      </Suspense>
-      <Suspense fallback={"loading..."}>
-        <LazyLoad height={"100vh"} offset={-100}>
-          <section id="#contact">
+          </section>
+          <section id="contact">
             <Contact />
-          </section>{" "}
-        </LazyLoad>
-      </Suspense>
-    </div>
+          </section>
+        </Suspense>
+      </main>
+    </>
   );
 };
 

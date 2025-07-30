@@ -1,0 +1,84 @@
+/* Navbar container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #0f0f0f;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner layout wrapper */
+.navContent {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* desktop: navList centered */
+  padding: 0 16px;
+}
+
+/* Nav list */
+.navList {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navList li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* ------------------- MOBILE ------------------- */
+@media (max-width: 768px) {
+  .navContent {
+    justify-content: space-between; /* ✅ hamburger left, nav right */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navList {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70%;
+    padding: 60px 32px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #0f0f0f;
+    transform: translateX(100%);
+  }
+
+  .navList.show {
+    transform: translateX(0);
+  }
+
+  .navList li {
+    margin: 16px 0;
+  }
+}

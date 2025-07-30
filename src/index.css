@@ -5,7 +5,7 @@
 }
 
 html {
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
 }
 
@@ -16,6 +16,8 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-top: 60px;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -33,7 +35,8 @@ a {
 
 section {
   height: 100vh;
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
+  /* scroll-margin-top: 80px; This offsets anchor scroll */
 }
 
 @media (min-width: 640px) {
