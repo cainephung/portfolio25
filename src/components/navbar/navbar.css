@@ -54,7 +54,7 @@
 /* ------------------- MOBILE ------------------- */
 @media (max-width: 768px) {
   .navContent {
-    justify-content: space-between; /* ✅ hamburger left, nav right */
+    justify-content: space-between;
   }
 
   .hamburger {
