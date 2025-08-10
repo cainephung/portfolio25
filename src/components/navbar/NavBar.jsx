@@ -24,7 +24,7 @@ const NavBar = () => {
           </li>
           <li>
             <a href="#services" onClick={handleClose}>
-              Services
+              About
             </a>
           </li>
           <li>
