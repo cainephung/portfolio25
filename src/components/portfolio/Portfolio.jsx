@@ -5,12 +5,18 @@ import { motion } from "motion/react";
 const items = [
   {
     id: 1,
+    video: "/output2.mp4",
+    title: "Full-Stack RAG Chatbot",
+    desc: "Built a full-stack Retrieval-Augmented Generation (RAG) chatbot using AWS Bedrock, FastAPI, and OpenSearch to answer questions based only on custom documents.\n\nSet up an S3-backed Knowledge Base with parsing, chunking, and Titan embeddings; integrated a FastAPI backend with REST endpoints; and developed a browser UI to interact with the system.\n\nImplemented a toggle to compare RAG vs direct-model answers, tuned source chunks and prompts for clearer responses, and customized the frontend for a branded chat experience.",
+  },
+  {
+    id: 2,
     video: "/output.mp4",
     title: "ASL Sign Language Recognition App",
     desc: "Built a webcam-based app using Python, MediaPipe, PyTorch, and OpenCV to recognize ASL hand signs (A–Z) and simple motion-based gestures.\n\nUsed MediaPipe for hand tracking, trained an LSTM model for gesture sequences,\nand optimized preprocessing for real-time responsiveness.",
   },
   {
-    id: 2,
+    id: 3,
     img: "/shop.png",
     title: "E-Commerce Website",
     desc: "Built with Next.js, JavaScript, and Sanity.io, this responsive e-commerce site features product listings, cart, and checkout flow.\n\nIt includes Sanity CMS for content management, smooth UI animations, and a mobile-friendly layout with visual polish.",
