@@ -34,7 +34,7 @@ const NavBar = () => {
           </li>
           <li>
             <a href="#portfolio" onClick={handleClose}>
-              Portfolio
+              Projects
             </a>
           </li>
           <li>
