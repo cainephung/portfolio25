@@ -10,11 +10,11 @@ const experienceList = [
     company: "The Equitable Life of Canada – Waterloo, ON",
     date: "Sept 2023 – Jan 2025",
     points: [
-      "Contributed to a shared React component library (using MUI) to improve consistency and code reuse and maintained comprehensive documentation.",
-      "Replaced hardcoded UI values with design tokens to support scalable theming.",
-      "Modernized legacy jobs by rewriting VBScript logic in C#.",
-      "Assisted with manual testing and debugging to ensure data accuracy.",
-      "Maintained workflows using ActiveBatch and promoted code with Azure DevOps.",
+      "Contributed to a React/MUI component library, improving UI consistency and reuse for 4+ internal teams.",
+      "Replaced hardcoded UI values with design tokens, centralizing styles and simplifying future updates.",
+      "Provided ongoing support for the library, resolving internal team issues proactively and reducing escalations.",
+      "Migrated 20+ VBScript legacy jobs to C#, taking multi-hour runs down to ~30 minutes (~80% reduction).",
+      "Maintained ActiveBatch workflows and supported deployments via Azure DevOps.",
     ],
   },
 ];
