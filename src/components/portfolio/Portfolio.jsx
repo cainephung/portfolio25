@@ -7,7 +7,7 @@ const items = [
     id: 1,
     video: "/output2.mp4",
     title: "Full-Stack RAG Chatbot",
-    desc: "Built a full-stack Retrieval-Augmented Generation (RAG) chatbot using AWS Bedrock, FastAPI, and OpenSearch to answer questions based only on custom documents.\n\nSet up an S3-backed Knowledge Base with parsing, chunking, and Titan embeddings; integrated a FastAPI backend with REST endpoints; and developed a browser UI to interact with the system.\n\nImplemented a toggle to compare RAG vs direct-model answers, tuned source chunks and prompts for clearer responses, and customized the frontend for a branded chat experience.",
+    desc: "Built a full-stack Retrieval-Augmented Generation (RAG) chatbot using AWS Bedrock, FastAPI, and OpenSearch to answer questions based only on custom documents.\n\nSet up an S3-backed Knowledge Base with parsing, chunking, and Titan embeddings, integrated a FastAPI backend with REST endpoints; and developed a browser UI to interact with the system.\n\nImplemented a toggle to compare RAG vs direct-model answers, tuned source chunks and prompts for clearer responses, and customized the frontend for a branded chat experience.",
   },
   {
     id: 2,

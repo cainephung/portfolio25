@@ -2,7 +2,7 @@ import ComputerModelContainer from "./computer/ComputerModelContainer";
 import "./services.css";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { FaUserGraduate, FaBriefcase, FaMapMarkerAlt } from "react-icons/fa";
+import { FaCode, FaServer, FaCloud } from "react-icons/fa"; // updated icons
 
 const textVariants = {
   initial: { x: -100, y: -100, opacity: 0 },
@@ -17,21 +17,21 @@ const textVariants = {
 const aboutFacts = [
   {
     id: 1,
-    icon: <FaUserGraduate className="text-white text-4xl" />,
-    title: "Software Developer",
-    note: "New Grad, 2025",
+    icon: <FaCode className="text-white text-4xl" />,
+    title: "Front-End Development",
+    note: "I enjoy building clean, reusable interfaces with React and TypeScript.",
   },
   {
     id: 2,
-    icon: <FaBriefcase className="text-white text-4xl" />,
-    title: "Co-op Experience",
-    note: "4 terms, 16 months",
+    icon: <FaServer className="text-white text-4xl" />,
+    title: "Backend & Automation",
+    note: "I’ve worked with C#, SQL, and REST APIs to connect data and improve workflows.",
   },
   {
     id: 3,
-    icon: <FaMapMarkerAlt className="text-white text-4xl" />,
-    title: "Based in Guelph",
-    note: "Open to remote / hybrid",
+    icon: <FaCloud className="text-white text-4xl" />,
+    title: "Cloud & DevOps",
+    note: "Hands-on with CI/CD pipelines and cloud tools like Azure and AWS.",
   },
 ];
 
@@ -68,7 +68,7 @@ const About = () => {
 
               <div className="serviceInfo text-lg mt-4">
                 <h1 className="text-white font-semibold">{item.title}</h1>
-                <h2 className="text-neutral-300">{item.note}</h2>
+                <h2 className="text-neutral-300 leading-relaxed">{item.note}</h2>
               </div>
             </motion.div>
           ))}

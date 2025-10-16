@@ -9,6 +9,7 @@ const experienceList = [
     title: "Software Developer Intern",
     company: "The Equitable Life of Canada – Waterloo, ON",
     date: "Sept 2023 – Jan 2025",
+    tech: "React · MUI · C# · .NET · SQL · Azure DevOps",
     points: [
       "Contributed to a React/MUI component library, improving UI consistency and reuse for 4+ internal teams.",
       "Replaced hardcoded UI values with design tokens, centralizing styles and simplifying future updates.",
@@ -36,14 +37,26 @@ const Experience = () => {
   return (
     <div className="services py-12 md:py-20 px-4 md:px-12" ref={ref}>
       <div className="sSection left">
+        {/* Section Title */}
         <motion.h1
           variants={textVariants}
           animate={isInView ? "animate" : "initial"}
-          className="sTitle mb-10"
+          className="sTitle mb-6"
         >
           Work Experience
         </motion.h1>
 
+        {/* Section Intro (Optional but Recommended) */}
+        {/* <motion.p
+          variants={textVariants}
+          animate={isInView ? "animate" : "initial"}
+          className="text-neutral-400 mb-12 max-w-2xl leading-relaxed text-sm md:text-base"
+        >
+          Hands-on professional experience in full-stack development, UI design systems,
+          and workflow automation through a year-long internship at Equitable Life.
+        </motion.p> */}
+
+        {/* Experience List */}
         <motion.div
           variants={textVariants}
           animate={isInView ? "animate" : "initial"}
@@ -52,10 +65,11 @@ const Experience = () => {
           {experienceList.map((item) => (
             <motion.div
               key={item.id}
-              whileHover={{ scale: 1.02, y: -2 }}
+              whileHover={{ scale: 1.03, y: -3 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="serviceExpanded flex gap-6 md:gap-10"
+              className="serviceExpanded flex flex-col md:flex-row items-start gap-6 md:gap-10 bg-[#1a112b]/80 p-6 md:p-8 rounded-2xl shadow-lg border border-[#2a1e45]"
             >
+              {/* Logo */}
               <div className="serviceIcon">
                 <img
                   src={item.icon}
@@ -64,14 +78,22 @@ const Experience = () => {
                 />
               </div>
 
+              {/* Content */}
               <div className="serviceInfo">
                 <h1 className="text-white font-bold text-2xl md:text-3xl mb-1">
                   {item.title}
                 </h1>
-                <h2 className="text-neutral-300 text-base md:text-lg mb-4">
+                <h2 className="text-neutral-300 text-base md:text-lg mb-2">
                   {item.company} <span className="mx-2">|</span> {item.date}
                 </h2>
-                <ul className="list-disc list-inside text-neutral-300 space-y-4 text-sm md:text-base leading-relaxed">
+
+                {/* Tech Stack Line */}
+                <p className="text-neutral-400 text-sm md:text-base mb-4 italic">
+                  {item.tech}
+                </p>
+
+                {/* Bullet Points */}
+                <ul className="list-disc list-inside text-neutral-300 space-y-3 md:space-y-4 text-sm md:text-base leading-relaxed">
                   {item.points.map((point, idx) => (
                     <li key={idx}>{point}</li>
                   ))}
