@@ -43,7 +43,7 @@
 
 .hTitle {
   margin-top: 50px;
-  font-size: 100px;
+  font-size: 72px;
   color: #034694;
 }
 
@@ -192,7 +192,7 @@
 
 @media (max-width: 1536px) {
   .hTitle {
-    font-size: 72px;
+    font-size: 66px;
   }
 }
 
@@ -208,7 +208,7 @@
   }
 
   .hTitle {
-    font-size: 88px;
+    font-size: 60px;
   }
 
   .awards {
@@ -226,7 +226,7 @@
   }
 
   .hTitle {
-    font-size: 72px;
+    font-size: 66px;
   }
 }
 
